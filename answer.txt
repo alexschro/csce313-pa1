@@ -1,0 +1,21 @@
+File Transfer Performace
+
+Data Collected:
+File Size (bytes) | File Size (simple) | Execution Time (seconds)
+1024		  | 1 KB	       | 1.046
+10240		  | 10 KB	       | 1.058
+102400		  | 100 KB	       | 1.131
+1048576		  | 1 MB	       | 1.721
+10485760	  | 10 MB	       | 7.644
+52428800	  | 50 MB	       | 32.565
+104857600	  | 100 MB	       | 64.353
+
+Analysis:
+The execution time increases linearly with file size because
+the transfer is done in 256-byte chunks. For example, the
+1KB file only needs 4 round trips because 1024/256 = 4. So
+the 10KB file would need 10 times the trips and so on. This
+becomes a bottleneck at large file sizes because the chunk
+sizes don't scale with the file sizes, so the 100MB file
+has to run almost 41,000 round trips to complete, thus
+explaining why that transfer takes so much longer.

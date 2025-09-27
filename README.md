@@ -1,6 +1,5 @@
 # CSCE 313 - PA1: Named Pipes
 
-This repository contains my implementation of PA1 for CSCE 313.
 github.com/alexschro/csce313-pa1/tree/main
 
 ## Files:
